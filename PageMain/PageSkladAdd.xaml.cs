@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISRPO_PR13_Cherednichenko402.ApplicationData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace ISRPO_PR13_Cherednichenko402.PageMain
         public PageSkladAdd()
         {
             InitializeComponent();
+            ComboStrana.ItemsSource = ISRPO13Cher402Entities.GetContext().Strana.ToList();
+        }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

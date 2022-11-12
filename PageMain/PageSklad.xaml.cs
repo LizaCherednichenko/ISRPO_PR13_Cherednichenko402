@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ISRPO_PR13_Cherednichenko402.ApplicationData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,22 @@ namespace ISRPO_PR13_Cherednichenko402.PageMain
         public PageSklad()
         {
             InitializeComponent();
+            DtGridTovar.ItemsSource = ISRPO13Cher402Entities.GetContext().Sklad.ToList();
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bthDel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bthAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AppFrame.MyFrame.Navigate(new PageMain.PageSkladAdd());
         }
     }
 }

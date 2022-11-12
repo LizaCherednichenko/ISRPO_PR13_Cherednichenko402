@@ -26,6 +26,7 @@ namespace ISRPO_PR13_Cherednichenko402
             InitializeComponent();
             AppConnect.model0db = new Sklad();
             AppFrame.MyFrame = MainFrame;
+            MainFrame.Navigate(new PageMain.PageSklad());
         }
     }
 }

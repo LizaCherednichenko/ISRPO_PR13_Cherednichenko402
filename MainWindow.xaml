@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISRPO_PR13_Cherednichenko402"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Склад" Height="450" MinHeight="450" Width="800" MinWidth="800" WindowStartupLocation="CenterScreen" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
@@ -16,9 +16,10 @@
         <Grid Grid.Row="0" Background="#FFA4A4C9" />
         <Grid Grid.Row="2" Background="#FFA4A4C9" />
 
-        <Image Source="Image/Logo.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="90"/>
-        <TextBlock Text="Склад" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#FF28063C" />
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+        <Image Source="Image/Logo.png" VerticalAlignment="Center" HorizontalAlignment="Left" Height="90" Grid.Row="0"/>
+        <TextBlock Text="Склад" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" Foreground="#FF28063C" Grid.Row="0"/>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1"/>
 
     </Grid>
 </Window>

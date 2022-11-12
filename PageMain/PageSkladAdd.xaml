@@ -9,6 +9,32 @@
       Title="PageSkladAdd">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text="Наименование" Grid.Row="0" Style="{StaticResource TextBlock}"/>
+        <TextBlock Text="Количество" Grid.Row="1" Style="{StaticResource TextBlock}"/>
+        <TextBlock Text="Цена" Grid.Row="2" Style="{StaticResource TextBlock}"/>
+        <TextBlock Text="Страна" Grid.Row="3" Style="{StaticResource TextBlock}"/>
+        <TextBlock Text="Комментарий" Grid.Row="4" Style="{StaticResource TextBlock}"/>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBox}" UndoLimit="50"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBox}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBox}"/>
+        <ComboBox Grid.Column="1" Grid.Row="3" Style="{StaticResource ComboBox}" x:Name="ComboStrana" SelectedIndex="{Binding Strana}" DisplayMemberPath="Strana1"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBox}"/>
+
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Content="Сохранить" Name="btnSave" Style="{StaticResource BtnG}" Click="btnSave_Click"/>
+
     </Grid>
 </Page>
