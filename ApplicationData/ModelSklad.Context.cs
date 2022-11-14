@@ -15,19 +15,22 @@ namespace ISRPO_PR13_Cherednichenko402.ApplicationData
 
     public partial class ISRPO13Cher402Entities : DbContext
     {
+
         private static ISRPO13Cher402Entities _context;
-        
+
         public ISRPO13Cher402Entities()
             : base("name=ISRPO13Cher402Entities")
         {
         }
-    
+
+
         public static ISRPO13Cher402Entities GetContext()
         {
             if (_context == null)
                 _context = new ISRPO13Cher402Entities();
             return _context;
         }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

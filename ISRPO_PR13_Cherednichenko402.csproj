@@ -137,7 +137,6 @@
     </EmbeddedResource>
     <EntityDeploy Include="ApplicationData\ModelSklad.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelSklad.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <None Include="ApplicationData\ModelSklad.edmx.diagram">
       <DependentUpon>ModelSklad.edmx</DependentUpon>

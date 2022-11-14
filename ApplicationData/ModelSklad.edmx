@@ -4,29 +4,29 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище ISRPO13Cher402Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="Хранилище ISRPO13Cher402Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="Sklad">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="naimenov" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="kolichestvo" Type="int" Nullable="false" />
-          <Property Name="cena" Type="money" Nullable="false" />
-          <Property Name="StranaID" Type="nchar" MaxLength="2" Nullable="false" />
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="naimenov" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="kolichestvo" Nullable="false" Type="int" />
+          <Property Name="cena" Nullable="false" Type="money" />
+          <Property Name="StranaID" Nullable="false" MaxLength="2" Type="nchar" />
           <Property Name="komment" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Strana">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="nchar" MaxLength="2" Nullable="false" />
-          <Property Name="Strana" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Postavki" Type="bit" Nullable="false" />
+          <Property Name="id" Nullable="false" MaxLength="2" Type="nchar" />
+          <Property Name="Strana" Nullable="false" MaxLength="50" Type="nvarchar" />
+          <Property Name="Postavki" Nullable="false" Type="bit" />
         </EntityType>
         <Association Name="FK_Sklad_Strana">
-          <End Role="Strana" Type="Self.Strana" Multiplicity="1" />
-          <End Role="Sklad" Type="Self.Sklad" Multiplicity="*" />
+          <End Type="Self.Strana" Multiplicity="1" Role="Strana" />
+          <End Type="Self.Sklad" Multiplicity="*" Role="Sklad" />
           <ReferentialConstraint>
             <Principal Role="Strana">
               <PropertyRef Name="id" />
@@ -40,8 +40,8 @@
           <EntitySet Name="Sklad" EntityType="Self.Sklad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Strana" EntityType="Self.Strana" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Sklad_Strana" Association="Self.FK_Sklad_Strana">
-            <End Role="Strana" EntitySet="Strana" />
-            <End Role="Sklad" EntitySet="Sklad" />
+            <End EntitySet="Strana" Role="Strana" />
+            <End EntitySet="Sklad" Role="Sklad" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -53,26 +53,26 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="naimenov" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="kolichestvo" Type="Int32" Nullable="false" />
-          <Property Name="cena" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="StranaID" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="komment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="naimenov" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="kolichestvo" Nullable="false" Type="Int32" />
+          <Property Name="cena" Nullable="false" Precision="19" Scale="4" Type="Decimal" />
+          <Property Name="StranaID" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" Type="String" />
+          <Property Name="komment" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
           <NavigationProperty Name="Strana" Relationship="Self.FK_Sklad_Strana" FromRole="Sklad" ToRole="Strana" />
         </EntityType>
         <EntityType Name="Strana">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="String" MaxLength="2" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="Strana1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Postavki" Type="Boolean" Nullable="false" />
+          <Property Name="id" Nullable="false" MaxLength="2" FixedLength="true" Unicode="true" Type="String" />
+          <Property Name="Strana1" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Postavki" Nullable="false" Type="Boolean" />
           <NavigationProperty Name="Sklad" Relationship="Self.FK_Sklad_Strana" FromRole="Strana" ToRole="Sklad" />
         </EntityType>
         <Association Name="FK_Sklad_Strana">
-          <End Role="Strana" Type="Self.Strana" Multiplicity="1" />
-          <End Role="Sklad" Type="Self.Sklad" Multiplicity="*" />
+          <End Type="Self.Strana" Multiplicity="1" Role="Strana" />
+          <End Type="Self.Sklad" Multiplicity="*" Role="Sklad" />
           <ReferentialConstraint>
             <Principal Role="Strana">
               <PropertyRef Name="id" />
@@ -86,8 +86,8 @@
           <EntitySet Name="Sklad" EntityType="Self.Sklad" />
           <EntitySet Name="Strana" EntityType="Self.Strana" />
           <AssociationSet Name="FK_Sklad_Strana" Association="Self.FK_Sklad_Strana">
-            <End Role="Strana" EntitySet="Strana" />
-            <End Role="Sklad" EntitySet="Sklad" />
+            <End EntitySet="Strana" Role="Strana" />
+            <End EntitySet="Sklad" Role="Sklad" />
           </AssociationSet>
         </EntityContainer>
       </Schema>

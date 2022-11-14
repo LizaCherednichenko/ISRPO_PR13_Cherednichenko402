@@ -28,11 +28,11 @@
         <TextBlock Text="Страна" Grid.Row="3" Style="{StaticResource TextBlock}"/>
         <TextBlock Text="Комментарий" Grid.Row="4" Style="{StaticResource TextBlock}"/>
 
-        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBox}" UndoLimit="50"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBox}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBox}"/>
+        <TextBox Grid.Column="1" Grid.Row="0" Style="{StaticResource TextBox}" MaxLength="50" Text="{Binding naimenov}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource TextBox}" Text="{Binding kolichestvo}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource TextBox}" Text="{Binding cena}"/>
         <ComboBox Grid.Column="1" Grid.Row="3" Style="{StaticResource ComboBox}" x:Name="ComboStrana" SelectedIndex="{Binding Strana}" DisplayMemberPath="Strana1"/>
-        <TextBox Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBox}"/>
+        <TextBox Grid.Column="1" Grid.Row="4" Style="{StaticResource TextBox}" Text="{Binding komment}"/>
 
         <Button Grid.Row="5" Grid.ColumnSpan="2" Content="Сохранить" Name="btnSave" Style="{StaticResource BtnG}" Click="btnSave_Click"/>
 
